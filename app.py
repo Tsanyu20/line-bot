@@ -99,7 +99,8 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-
+    else:
+         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='蛤'))
 
 if __name__ == '__main__':
     app.run()
