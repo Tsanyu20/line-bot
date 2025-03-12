@@ -34,7 +34,23 @@ def handle_text(event):
     if mtext == '結帳':
         try:
             message = FlexSendMessage(
-                contents=total()
+                contents={
+                  "type": "bubble",
+                  "body": {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "Hello,"
+                      },
+                      {
+                        "type": "text",
+                        "text": "World!"
+                      }
+                    ]
+                  }
+                }
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:
@@ -101,39 +117,39 @@ def handle_text(event):
 
 def total():
     contents= {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "收據",
-            "weight": "bold",
-            "color": "#1DB446",
-            "size": "sm"
-          },
-          {
-            "type": "text",
-            "text": "勝美切子担",
-            "weight": "bold",
-            "size": "xxl",
-            "margin": "md"
-          },
-          {
-            "type": "text",
-            "text": "屏東縣東港鎮朝陽街44號",
-            "size": "xs",
-            "color": "#aaaaaa",
-            "wrap": True
-          }
-        ]
-      },
-      "styles": {
-        "footer": {
-          "separator": True
-        }
-      }
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                              {
+                                    "type": "text",
+                                    "text": "收據",
+                                    "weight": "bold",
+                                    "color": "#1DB446",
+                                    "size": "sm"
+                              },
+                              {
+                                    "type": "text",
+                                    "text": "勝美切子担",
+                                    "weight": "bold",
+                                    "size": "xxl",
+                                    "margin": "md"
+                              },
+                              {
+                                    "type": "text",
+                                    "text": "屏東縣東港鎮朝陽街44號",
+                                    "size": "xs",
+                                    "color": "#aaaaaa",
+                                    "wrap": True
+                              }
+                    ]
+                  },
+                  "styles": {
+                        "footer": {
+                            "separator": True
+                        }
+                  }
     }
     return contents
 
