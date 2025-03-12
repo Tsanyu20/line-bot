@@ -11,7 +11,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSend
 
 line_bot_api = LineBotApi(os.getenv("LINE_BOT_API"))
 handler = WebhookHandler(os.getenv("WEBHOOK"))
-order_list = []
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -67,10 +67,11 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '菜單':
         try:
-            message = FlexSendMessage(
-                alt_text='看菜單',
-                contents=menu()
-            )
+            message = TextSendMessage(text='菜單OK')
+            # message = FlexSendMessage(
+            #     alt_text='看菜單',
+            #     contents=menu()
+            # )
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '推薦':
@@ -123,8 +124,10 @@ def handle_text(event):
             TextSendMessage(
                 text='如果不知如何使用，可以點擊以下按鈕，選擇功能唷！',
                 quick_reply=QuickReply(
-                    items=[QuickReplyButton(
-                    actoin=MessageAction(label="點我查看！", text='功能關鍵字清單'))]
+                    items=[
+                        QuickReplyButton(
+                            actoin=MessageAction(label="點我查看！", text='功能關鍵字清單'))
+                    ]
                 )
             )
         )
@@ -221,6 +224,7 @@ def menu():
             }
         ]
     }
+    return contents
 def total():
     contents= {
                 "type": "bubble",
