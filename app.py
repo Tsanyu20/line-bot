@@ -34,6 +34,7 @@ def handle_text(event):
     if mtext == '結帳':
         try:
             message = FlexSendMessage(
+                alt_text='total',
                 contents={
                   "type": "bubble",
                   "body": {
@@ -65,16 +66,11 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    elif mtext == '＠多項傳送':
+    elif mtext == '功能關鍵字清單':
         message = [
             TextSendMessage(
-                text='我就爛！'),
-            ImageSendMessage(
-                original_content_url='https://i.imgur.com/fwWC9HM.png',
-                preview_image_url='https://i.imgur.com/fwWC9HM.png'),
-            StickerSendMessage(
-                package_id='11539',
-                sticker_id='52114111')
+
+                ),
         ]
         line_bot_api.reply_message(event.reply_token, message)
     elif '店家地址' in mtext:
