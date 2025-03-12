@@ -84,8 +84,9 @@ def handle_text(event):
         try:
             message = FlexSendMessage(
                 alt_text='看菜單',
-                contents= menu()
+                contents=menu()
             )
+            line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '推薦':
@@ -134,7 +135,7 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    else:
+    elif mtext == '怎麼使用':
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(
