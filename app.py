@@ -122,8 +122,9 @@ def handle_text(event):
             event.reply_token,
             TextSendMessage(
                 text='如果不知如何使用，可以點擊以下按鈕，選擇功能唷！',
-                quick_reply=QuickReply(QuickReplyButton(
-                    actoin=MessageAction(label="點我查看！", text='功能關鍵字清單'))
+                quick_reply=QuickReply(
+                    items=[QuickReplyButton(
+                    actoin=MessageAction(label="點我查看！", text='功能關鍵字清單'))]
                 )
             )
         )
