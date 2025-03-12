@@ -38,9 +38,7 @@ def handle_text(event):
                 quick_reply=QuickReply(
                     items=[
                         QuickReplyButton(
-                            action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
-                        QuickReplyButton(
-                            action=MessageAction(label='預約外送', text='外送到我家')),
+                            action=MessageAction(label='預約訂單', text='我要點餐')),
                         QuickReplyButton(
                             action=MessageAction(label='我要看菜單', text='菜單')),
                         QuickReplyButton(
@@ -55,17 +53,25 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    elif mtext == '結帳':
+
+    elif mtext == '我要點餐':
         try:
-            message = FlexSendMessage(
-                alt_text='total',
-                contents=total()
+            message = TextSendMessage(
+                text='請選擇要自取還是外送：',
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(
+                            action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
+                        QuickReplyButton(
+                            action=MessageAction(label='預約外送', text='外送到我家'))
+                    ]
+                )
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '線上訂餐稍後取':
+    elif mtext == '線上訂餐稍後取' or mtext == '外送到我家':
         try:
             message = StickerSendMessage(
                 package_id='1',
@@ -74,24 +80,12 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    elif mtext == '功能關鍵字清單':
-        message = [
-            TextSendMessage(
-
-                ),
-        ]
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '店家地址' in mtext:
+    elif mtext == '菜單':
         try:
-            message = LocationSendMessage(
-                title='勝美美食',
-                address='屏東縣東港鎮朝陽街44號',
-                latitude=22.466120,
-                longitude=120.449240
+            message = FlexSendMessage(
+                alt_text='看菜單',
+                contents= menu()
             )
-            line_bot_api.reply_message(event.reply_token, message)
-        except:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '推薦':
         try:
             message = [
@@ -116,6 +110,28 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+    elif '店家地址' in mtext:
+        try:
+            message = LocationSendMessage(
+                title='勝美美食',
+                address='屏東縣東港鎮朝陽街44號',
+                latitude=22.466120,
+                longitude=120.449240
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+    elif mtext == '結帳':
+        try:
+            message = FlexSendMessage(
+                alt_text='total',
+                contents=total()
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     else:
         line_bot_api.reply_message(
             event.reply_token,
@@ -129,6 +145,259 @@ def handle_text(event):
                 )
             )
         )
+
+def menu():
+    contents={
+        "type": "carousel",
+        "contents": [
+            {
+                "type": "bubble",
+                "direction": "ltr",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "uri",
+                        "uri": "https://line.me/"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "湯類",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "排骨湯",
+                                            "weight": "bold",
+                                            "align": "start",
+                                            "margin": "sm"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "40元",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "菜頭、金針、酸菜、香菇、苦瓜",
+                                    "size": "XS",
+                                    "wrap": true,
+                                    "color": "#aaaaaa",
+                                    "margin": "none",
+                                    "offsetStart": "md"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "雞肉湯",
+                                                    "weight": "bold",
+                                                    "margin": "sm",
+                                                    "align": "start"
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "text": "40元",
+                                                    "size": "sm",
+                                                    "align": "end",
+                                                    "color": "#aaaaaa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "瓜仔雞、香菇雞",
+                                            "size": "XS",
+                                            "wrap": true,
+                                            "color": "#aaaaaa",
+                                            "margin": "none",
+                                            "offsetStart": "md"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "message",
+                                "label": "我要點餐",
+                                "text": "我要點餐"
+                            },
+                            "color": "#905c44",
+                            "style": "primary",
+                            "margin": "xxl"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "bubble",
+                "direction": "ltr",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "uri",
+                        "uri": "https://line.me/"
+                    },
+                    "contents": [
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "主食類",
+                                    "size": "xl",
+                                    "weight": "bold"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "有分大小",
+                                    "size": "sm",
+                                    "align": "end",
+                                    "offsetTop": "sm",
+                                    "color": "#aaaaaa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "飯食",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "align": "start"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "雞肉飯、肉臊飯",
+                                            "weight": "regular",
+                                            "margin": "sm",
+                                            "align": "start",
+                                            "offsetStart": "xs",
+                                            "size": "sm"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "小份30元/大份40元",
+                                            "color": "#aaaaaa",
+                                            "size": "sm",
+                                            "align": "end"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "便當",
+                                            "weight": "regular",
+                                            "margin": "sm",
+                                            "align": "start",
+                                            "offsetStart": "xs",
+                                            "size": "sm"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "60元/加飯+10元",
+                                            "color": "#aaaaaa",
+                                            "size": "sm",
+                                            "align": "end"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "麵食",
+                                            "margin": "sm",
+                                            "weight": "bold",
+                                            "align": "start"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "message",
+                                "label": "我要點餐",
+                                "text": "我要點餐"
+                            },
+                            "color": "#905c44",
+                            "style": "primary",
+                            "margin": "xxl"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    return contents
 
 def total():
     contents= {
@@ -170,3 +439,5 @@ def total():
 
 if __name__ == '__main__':
     app.run()
+
+
