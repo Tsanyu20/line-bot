@@ -199,7 +199,7 @@ def menu():
                                     "type": "text",
                                     "text": "菜頭、金針、酸菜、香菇、苦瓜",
                                     "size": "XS",
-                                    "wrap": true,
+                                    "wrap": True,
                                     "color": "#aaaaaa",
                                     "margin": "none",
                                     "offsetStart": "md"
@@ -233,7 +233,7 @@ def menu():
                                             "type": "text",
                                             "text": "瓜仔雞、香菇雞",
                                             "size": "XS",
-                                            "wrap": true,
+                                            "wrap": True,
                                             "color": "#aaaaaa",
                                             "margin": "none",
                                             "offsetStart": "md"
