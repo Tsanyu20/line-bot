@@ -31,7 +31,31 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text(event):
     mtext = event.message.text
-    if mtext == '結帳':
+    if mtext == '功能關鍵字清單':
+        try:
+            message = TextSendMessage(
+                text='請選擇要執行的動作：',
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(
+                            action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
+                        QuickReplyButton(
+                            action=MessageAction(label='預約外送', text='外送到我家')),
+                        QuickReplyButton(
+                            action=MessageAction(label='我要看菜單', text='菜單')),
+                        QuickReplyButton(
+                            action=MessageAction(label='我需要推薦', text='推薦')),
+                        QuickReplyButton(
+                            action=MessageAction(label='查詢店家地址', text='店家地址')),
+                        QuickReplyButton(
+                            action=MessageAction(label='我要結帳', text='結帳'))
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    elif mtext == '結帳':
         try:
             message = FlexSendMessage(
                 alt_text='total',
