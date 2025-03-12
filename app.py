@@ -40,7 +40,7 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '＠傳送貼圖':
+    elif mtext == '線上訂餐稍後取':
         try:
             message = StickerSendMessage(
                 package_id='1',
@@ -108,208 +108,24 @@ def total():
         "contents": [
           {
             "type": "text",
-            "text": "RECEIPT",
+            "text": "收據",
             "weight": "bold",
             "color": "#1DB446",
             "size": "sm"
           },
           {
             "type": "text",
-            "text": "Brown Store",
+            "text": "勝美切子担",
             "weight": "bold",
             "size": "xxl",
             "margin": "md"
           },
           {
             "type": "text",
-            "text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
+            "text": "屏東縣東港鎮朝陽街44號",
             "size": "xs",
             "color": "#aaaaaa",
             "wrap": True
-          },
-          {
-            "type": "separator",
-            "margin": "xxl"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "xxl",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "Energy Drink",
-                    "size": "sm",
-                    "color": "#555555",
-                    "flex": 0,
-                    "contents": [
-                      {
-                        "type": "span",
-                        "text": "hello, world"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "text",
-                    "text": "$2.99",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "Chewing Gum",
-                    "size": "sm",
-                    "color": "#555555",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$0.99",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "Bottled Water",
-                    "size": "sm",
-                    "color": "#555555",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$3.33",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "separator",
-                "margin": "xxl"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "xxl",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "ITEMS",
-                    "size": "sm",
-                    "color": "#555555"
-                  },
-                  {
-                    "type": "text",
-                    "text": "3",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "TOTAL",
-                    "size": "sm",
-                    "color": "#555555"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$7.31",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "CASH",
-                    "size": "sm",
-                    "color": "#555555"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$8.0",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "CHANGE",
-                    "size": "sm",
-                    "color": "#555555"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$0.69",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "xxl"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "margin": "md",
-            "contents": [
-              {
-                "type": "text",
-                "text": "PAYMENT ID",
-                "size": "xs",
-                "color": "#aaaaaa",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "#743289384279",
-                "color": "#aaaaaa",
-                "size": "xs",
-                "align": "end"
-              }
-            ]
           }
         ]
       },
@@ -320,5 +136,6 @@ def total():
       }
     }
     return contents
+
 if __name__ == '__main__':
     app.run()
