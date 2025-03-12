@@ -117,7 +117,18 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     else:
-         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='蛤'))
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(
+                text='如果不知如何使用，可以點擊以下按鈕，選擇功能唷！',
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(
+                            action=MessageAction(label='點我查看！', text='功能關鍵字清單'))
+                    ]
+                )
+            )
+        )
 
 def total():
     contents= {
