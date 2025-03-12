@@ -86,6 +86,8 @@ def handle_text(event):
                 alt_text='看菜單',
                 contents= menu()
             )
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '推薦':
         try:
             message = [
