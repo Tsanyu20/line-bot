@@ -1,7 +1,9 @@
 import os
 #linebotTest1
 from flask import Flask
+from dotenv import load_dotenv
 app = Flask(__name__)
+load_dotenv()
 
 #import flask
 from flask import request, abort
@@ -32,31 +34,31 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text(event):
     mtext = event.message.text
-    if mtext == '功能關鍵字清單':
-        try:
-            message = TextSendMessage(
-                text='請選擇要執行的動作：',
-                quick_reply=QuickReply(
-                    items=[
-                        QuickReplyButton(
-                            action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
-                        QuickReplyButton(
-                            action=MessageAction(label='預約外送', text='外送到我家')),
-                        QuickReplyButton(
-                            action=MessageAction(label='我要看菜單', text='菜單')),
-                        QuickReplyButton(
-                            action=MessageAction(label='我需要推薦', text='推薦')),
-                        QuickReplyButton(
-                            action=MessageAction(label='查詢店家地址', text='店家地址')),
-                        QuickReplyButton(
-                            action=MessageAction(label='我要結帳', text='結帳'))
-                    ]
-                )
-            )
-            line_bot_api.reply_message(event.reply_token, message)
-        except:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-    elif mtext == '線上訂餐稍後取' or mtext == '外送到我家':
+    # if mtext == '功能關鍵字清單':
+    #     try:
+    #         message = TextSendMessage(
+    #             text='請選擇要執行的動作：',
+    #             quick_reply=QuickReply(
+    #                 items=[
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='預約外送', text='外送到我家')),
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='我要看菜單', text='菜單')),
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='我需要推薦', text='推薦')),
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='查詢店家地址', text='店家地址')),
+    #                     QuickReplyButton(
+    #                         action=MessageAction(label='我要結帳', text='結帳'))
+    #                 ]
+    #             )
+    #         )
+    #         line_bot_api.reply_message(event.reply_token, message)
+    #     except:
+    #         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    if mtext == '線上訂餐稍後取' or mtext == '外送到我家':
         try:
             message = StickerSendMessage(
                 package_id='1',
@@ -131,100 +133,101 @@ def handle_text(event):
                 )
             )
         )
-def menu():
-    contents= {
-        "type" : "carousel",
-        "contents" : [
-            {
-                "type" : "bubble",
-                "body" : {
-                    "type" : "box",
-                    "layout" : "vertical",
-                    "spacing" : "md",
-                    "action" : {
-                        "type" : "uri",
-                        "uri" : "https://line.me/"
-                    },
-                    "contents" : [
-                        {
-                            "type": "text",
-                            "text": "湯類",
-                            "size": "xl",
-                            "weight": "bold"
-                        },
-                        {
-                            "type" : "box",
-                            "layout" : "vertical",
-                            "spacing" : "sm",
-                            "contents" : [
-                                {
-                                    "type": "box",
-                                    "layout" : "baseline",
-                                    "contents" : [
-                                        {
-                                            "type": "text",
-                                            "text": "排骨湯",
-                                            "weight" : "bold",
-                                            "margin" : "sm",
-                                            "flex" : 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "40元",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaa"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "text": "菜頭、金針、酸菜、香菇、苦瓜",
-                            "wrap": True,
-                            "color": "#fff",
-                            "size": "xs"
-                        }
-                    ]
-                },
-                "footer" : {
-                    "type" : "box",
-                    "layout" : "vertical",
-                    "contents" : [
-                        {
-                            "type": "button",
-                            "style": "primary",
-                            "color": "#905c44",
-                            "margin": "xxl",
-                            "action": {
-                                "type": "uri",
-                                "label": "Add to Cart",
-                                "uri": "https://line.me/"
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "type" : "bubble",
-                "body" : {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": "RECEIPT",
-                            "weight": "bold",
-                            "color": "#1DB446",
-                            "size": "sm"
-                        }
-                    ]
-                }
-            }
-        ]
-    }
-    return contents
+# def menu():
+#     contents= {
+#         "type" : "carousel",
+#         "contents" : [
+#             {
+#                 "type" : "bubble",
+#                 "body" : {
+#                     "type" : "box",
+#                     "layout" : "vertical",
+#                     "spacing" : "md",
+#                     "action" : {
+#                         "type" : "uri",
+#                         "uri" : "https://line.me/"
+#                     },
+#                     "contents" : [
+#                         {
+#                             "type": "text",
+#                             "text": "湯類",
+#                             "size": "xl",
+#                             "weight": "bold"
+#                         },
+#                         {
+#                             "type" : "box",
+#                             "layout" : "vertical",
+#                             "spacing" : "sm",
+#                             "contents" : [
+#                                 {
+#                                     "type": "box",
+#                                     "layout" : "baseline",
+#                                     "contents" : [
+#                                         {
+#                                             "type": "text",
+#                                             "text": "排骨湯",
+#                                             "weight" : "bold",
+#                                             "margin" : "sm",
+#                                             "flex" : 0
+#                                         },
+#                                         {
+#                                             "type": "text",
+#                                             "text": "40元",
+#                                             "size": "sm",
+#                                             "align": "end",
+#                                             "color": "#aaaaa"
+#                                         }
+#                                     ]
+#                                 }
+#                             ]
+#                         },
+#                         {
+#                             "type": "text",
+#                             "text": "菜頭、金針、酸菜、香菇、苦瓜",
+#                             "wrap": True,
+#                             "color": "#fff",
+#                             "size": "xs"
+#                         }
+#                     ]
+#                 },
+#                 "footer" : {
+#                     "type" : "box",
+#                     "layout" : "vertical",
+#                     "contents" : [
+#                         {
+#                             "type": "button",
+#                             "style": "primary",
+#                             "color": "#905c44",
+#                             "margin": "xxl",
+#                             "action": {
+#                                 "type": "uri",
+#                                 "label": "Add to Cart",
+#                                 "uri": "https://line.me/"
+#                             }
+#                         }
+#                     ]
+#                 }
+#             },
+#             {
+#                 "type" : "bubble",
+#                 "body" : {
+#                     "type": "box",
+#                     "layout": "vertical",
+#                     "contents": [
+#                         {
+#                             "type": "text",
+#                             "text": "RECEIPT",
+#                             "weight": "bold",
+#                             "color": "#1DB446",
+#                             "size": "sm"
+#                         }
+#                     ]
+#                 }
+#             }
+#         ]
+#     }
+#     return contents
+
 def total():
     contents= {
                 "type": "bubble",
