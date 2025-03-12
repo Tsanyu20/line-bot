@@ -35,23 +35,7 @@ def handle_text(event):
         try:
             message = FlexSendMessage(
                 alt_text='total',
-                contents={
-                  "type": "bubble",
-                  "body": {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "Hello,"
-                      },
-                      {
-                        "type": "text",
-                        "text": "World!"
-                      }
-                    ]
-                  }
-                }
+                contents=total()
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:
