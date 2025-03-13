@@ -85,7 +85,7 @@ def handle_text(event):
         try:
             message = FlexSendMessage(
                 alt_text='看菜單',
-                contents=test()
+                contents=menu()
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:

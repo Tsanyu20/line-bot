@@ -440,7 +440,7 @@ def total():
                               },
                               {
                                     "type": "text",
-                                    "text": "勝美切子担",
+                                    "text": "勝美切仔担",
                                     "weight": "bold",
                                     "size": "xxl",
                                     "margin": "md"
