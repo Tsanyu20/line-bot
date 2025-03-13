@@ -464,180 +464,244 @@ def total():
 
 def test():
     return {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "湯類及蒸蛋",
-        "weight": "bold",
-        "color": "#73bb95",
-        "size": "xl"
-      },
-      {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "nano",
+      "header": {
         "type": "box",
         "layout": "vertical",
-        "margin": "xxl",
-        "spacing": "sm",
         "contents": [
           {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "人蔘雞心湯、豬腦湯",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$50",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
+            "type": "text",
+            "text": "In Progress",
+            "color": "#ffffff",
+            "align": "start",
+            "size": "md",
+            "gravity": "center"
           },
           {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "排骨湯、雞肉湯、當歸鴨湯",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$40",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "肉羹湯、豬肝湯、排骨酥湯",
-                "size": "sm",
-                "color": "#111111"
-              },
-              {
-                "type": "text",
-                "text": "$40",
-                "size": "sm",
-                "align": "end",
-                "color": "#111111"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "香菇蒸蛋",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$30",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "xxl"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "margin": "xxl",
-            "contents": [
-              {
-                "type": "text",
-                "text": "排骨湯：",
-                "size": "sm",
-                "color": "#555555",
-                "flex": 0
-              }
-            ]
+            "type": "text",
+            "text": "70%",
+            "color": "#ffffff",
+            "align": "start",
+            "size": "xs",
+            "gravity": "center",
+            "margin": "lg"
           },
           {
             "type": "box",
             "layout": "vertical",
             "contents": [
               {
-                "type": "text",
-                "size": "sm",
-                "color": "#555555",
-                "align": "start",
-                "text": "菜頭、苦瓜、金針、香菇、酸菜",
-                "offsetStart": "lg"
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "width": "70%",
+                "backgroundColor": "#0D8186",
+                "height": "6px"
               }
-            ]
-          },
+            ],
+            "backgroundColor": "#9FD8E36E",
+            "height": "6px",
+            "margin": "sm"
+          }
+        ],
+        "backgroundColor": "#27ACB2",
+        "paddingTop": "19px",
+        "paddingAll": "12px",
+        "paddingBottom": "16px"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
           {
             "type": "box",
             "layout": "horizontal",
             "contents": [
               {
                 "type": "text",
-                "text": "雞肉湯",
+                "text": "Buy milk and lettuce before class",
+                "color": "#8C8C8C",
                 "size": "sm",
-                "color": "#555555"
+                "wrap": True
               }
-            ]
+            ],
+            "flex": 1
           }
-        ]
+        ],
+        "spacing": "md",
+        "paddingAll": "12px"
       },
-      {
+      "styles": {
+        "footer": {
+          "separator": False
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "nano",
+      "header": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
             "type": "text",
-            "size": "sm",
-            "color": "#555555",
+            "text": "Pending",
+            "color": "#ffffff",
             "align": "start",
-            "text": "瓜仔雞、香菇雞",
-            "offsetStart": "lg"
+            "size": "md",
+            "gravity": "center"
+          },
+          {
+            "type": "text",
+            "text": "30%",
+            "color": "#ffffff",
+            "align": "start",
+            "size": "xs",
+            "gravity": "center",
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "width": "30%",
+                "backgroundColor": "#DE5658",
+                "height": "6px"
+              }
+            ],
+            "backgroundColor": "#FAD2A76E",
+            "height": "6px",
+            "margin": "sm"
           }
-        ]
+        ],
+        "backgroundColor": "#FF6B6E",
+        "paddingTop": "19px",
+        "paddingAll": "12px",
+        "paddingBottom": "16px"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Wash my car",
+                "color": "#8C8C8C",
+                "size": "sm",
+                "wrap": True
+              }
+            ],
+            "flex": 1
+          }
+        ],
+        "spacing": "md",
+        "paddingAll": "12px"
+      },
+      "styles": {
+        "footer": {
+          "separator": False
+        }
       }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "button",
-        "action": {
-          "type": "message",
-          "label": "我要點餐",
-          "text": "我要點餐"
-        },
-        "color": "#73bb95",
-        "style": "primary",
-        "margin": "xxl"
-     }
-    ]
-  }
+    },
+    {
+      "type": "bubble",
+      "size": "nano",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "In Progress",
+            "color": "#ffffff",
+            "align": "start",
+            "size": "md",
+            "gravity": "center"
+          },
+          {
+            "type": "text",
+            "text": "100%",
+            "color": "#ffffff",
+            "align": "start",
+            "size": "xs",
+            "gravity": "center",
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "width": "100%",
+                "backgroundColor": "#7D51E4",
+                "height": "6px"
+              }
+            ],
+            "backgroundColor": "#9FD8E36E",
+            "height": "6px",
+            "margin": "sm"
+          }
+        ],
+        "backgroundColor": "#A17DF5",
+        "paddingTop": "19px",
+        "paddingAll": "12px",
+        "paddingBottom": "16px"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Buy milk and lettuce before class",
+                "color": "#8C8C8C",
+                "size": "sm",
+                "wrap": True
+              }
+            ],
+            "flex": 1
+          }
+        ],
+        "spacing": "md",
+        "paddingAll": "12px"
+      },
+      "styles": {
+        "footer": {
+          "separator": False
+        }
+      }
+    }
+  ]
 }
