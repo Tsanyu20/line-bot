@@ -443,154 +443,139 @@ def total():
 def test():
     return {
   "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://developers-resource.landpress.line.me/fx/img/01_1_cafe.png",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "https://line.me/"
-    }
-  },
   "body": {
     "type": "box",
     "layout": "vertical",
     "contents": [
       {
         "type": "text",
-        "text": "Brown Cafe",
+        "text": "湯類及蒸蛋",
         "weight": "bold",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
-          },
-          {
-            "type": "text",
-            "text": "4.0",
-            "size": "sm",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0
-          }
-        ]
+        "color": "#1DB446",
+        "size": "sm"
       },
       {
         "type": "box",
         "layout": "vertical",
-        "margin": "lg",
+        "margin": "xxl",
         "spacing": "sm",
         "contents": [
           {
             "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
+            "layout": "horizontal",
             "contents": [
               {
                 "type": "text",
-                "text": "Place",
-                "color": "#aaaaaa",
+                "text": "排骨湯、雞肉湯、肉羹湯、豬肝湯",
                 "size": "sm",
-                "flex": 1
+                "color": "#111111",
+                "flex": 0
               },
               {
                 "type": "text",
-                "text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
-                "wrap": True,
-                "color": "#666666",
+                "text": "$40",
                 "size": "sm",
-                "flex": 5
+                "color": "#111111",
+                "align": "end"
               }
             ]
           },
           {
             "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
+            "layout": "horizontal",
             "contents": [
               {
                 "type": "text",
-                "text": "Time",
-                "color": "#aaaaaa",
+                "text": "香菇蒸蛋",
                 "size": "sm",
-                "flex": 1
+                "color": "#111111",
+                "flex": 0
               },
               {
                 "type": "text",
-                "text": "10:00 - 23:00",
-                "wrap": True,
-                "color": "#666666",
+                "text": "$30",
                 "size": "sm",
-                "flex": 5
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "雞心湯、豬腦湯",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$50",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "xxl"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "xxl",
+            "contents": [
+              {
+                "type": "text",
+                "text": "排骨湯：",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "菜頭、苦瓜、金針、香菇、酸菜",
+                "size": "sm",
+                "color": "#555555",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "雞肉湯",
+                "size": "sm",
+                "color": "#555555"
+              },
+              {
+                "type": "text",
+                "text": "瓜仔雞、香菇雞",
+                "size": "sm",
+                "color": "#555555",
+                "align": "end"
               }
             ]
           }
         ]
+      },
+      {
+        "type": "separator",
+        "margin": "xxl"
       }
     ]
   },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "button",
-        "style": "link",
-        "height": "sm",
-        "action": {
-          "type": "uri",
-          "label": "CALL",
-          "uri": "https://line.me/"
-        }
-      },
-      {
-        "type": "button",
-        "style": "link",
-        "height": "sm",
-        "action": {
-          "type": "uri",
-          "label": "WEBSITE",
-          "uri": "https://line.me/"
-        }
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [],
-        "margin": "sm"
-      }
-    ],
-    "flex": 0
+  "styles": {
+    "footer": {
+      "separator": True
+    }
   }
 }
 if __name__ == '__main__':
