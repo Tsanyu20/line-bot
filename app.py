@@ -535,13 +535,20 @@ def test():
                 "size": "sm",
                 "color": "#555555",
                 "flex": 0
-              },
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
               {
                 "type": "text",
-                "text": "菜頭、苦瓜、金針、香菇、酸菜",
                 "size": "sm",
                 "color": "#555555",
-                "align": "end"
+                "align": "start",
+                "text": "菜頭、苦瓜、金針、香菇、酸菜",
+                "offsetStart": "lg"
               }
             ]
           },
@@ -554,30 +561,46 @@ def test():
                 "text": "雞肉湯",
                 "size": "sm",
                 "color": "#555555"
-              },
-              {
-                "type": "text",
-                "text": "瓜仔雞、香菇雞",
-                "size": "sm",
-                "color": "#555555",
-                "align": "end"
               }
             ]
           }
         ]
       },
       {
-        "type": "separator",
-        "margin": "xxl"
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#555555",
+            "align": "start",
+            "text": "瓜仔雞、香菇雞",
+            "offsetStart": "lg"
+          }
+        ]
       }
     ]
   },
-  "styles": {
-    "footer": {
-      "separator": True
-    }
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "我要點餐",
+          "text": "我要點餐"
+        },
+        "color": "#905c44",
+        "style": "primary",
+        "margin": "xxl"
+      }
+    ]
   }
 }
+
 if __name__ == '__main__':
     app.run()
 
