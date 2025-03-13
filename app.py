@@ -129,7 +129,7 @@ def handle_text(event):
     elif mtext == '結帳':
         try:
             message = FlexSendMessage(
-                alt_text='total',
+                alt_text='收據',
                 contents=total()
             )
             line_bot_api.reply_message(event.reply_token, message)
@@ -525,7 +525,7 @@ def test():
               {
                 "type": "text",
                 "text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -547,7 +547,7 @@ def test():
               {
                 "type": "text",
                 "text": "10:00 - 23:00",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
