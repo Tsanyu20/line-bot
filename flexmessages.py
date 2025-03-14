@@ -66,7 +66,8 @@ def soup():
                     "type": "text",
                     "text": "肉羹湯、豬肝湯、排骨酥湯",
                     "size": "sm",
-                    "color": "#111111"
+                    "color": "#111111",
+                    "flex": 0
                   },
                   {
                     "type": "text",
@@ -335,7 +336,18 @@ def main_food():
         "color": "#905c44",
         "style": "primary",
         "margin": "xxl"
-      }
+      },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "看其他菜單",
+              "text": "菜單"
+            },
+            "style": "primary",
+            "margin": "sm",
+            "color": "#ddd605"
+          }
     ]
   }
 }
@@ -431,135 +443,6 @@ def sides():
                 "margin": "xxl"
               }
             ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "麵食",
-                "size": "md",
-                "weight": "bold",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "size": "xxs",
-                "text": "*可選油麵、米粉、蒸煮麵、雞絲麵、意麵",
-                "align": "end",
-                "offsetTop": "XS"
-              }
-            ],
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鍋燒麵*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$75(大)/$65(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鴨肉冬粉湯",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$70(大)/$50(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鴨肉湯麵*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$65(大)/$50(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "肉羹麵*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$65(大)/$50(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "肉臊麵*、湯麵*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$50(大)/$40(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              }
-            ],
-            "margin": "md",
-            "spacing": "sm"
           }
         ]
       },
@@ -866,3 +749,134 @@ def test():
     }
   ]
 }
+
+# ,
+#           {
+#             "type": "box",
+#             "layout": "horizontal",
+#             "contents": [
+#               {
+#                 "type": "text",
+#                 "text": "麵食",
+#                 "size": "md",
+#                 "weight": "bold",
+#                 "flex": 0
+#               },
+#               {
+#                 "type": "text",
+#                 "size": "xxs",
+#                 "text": "*可選油麵、米粉、蒸煮麵、雞絲麵、意麵",
+#                 "align": "end",
+#                 "offsetTop": "XS"
+#               }
+#             ],
+#             "margin": "md"
+#           },
+#           {
+#             "type": "box",
+#             "layout": "vertical",
+#             "contents": [
+#               {
+#                 "type": "box",
+#                 "layout": "horizontal",
+#                 "contents": [
+#                   {
+#                     "type": "text",
+#                     "text": "鍋燒麵*",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "flex": 0
+#                   },
+#                   {
+#                     "type": "text",
+#                     "text": "$75(大)/$65(小)",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "align": "end"
+#                   }
+#                 ]
+#               },
+#               {
+#                 "type": "box",
+#                 "layout": "horizontal",
+#                 "contents": [
+#                   {
+#                     "type": "text",
+#                     "text": "鴨肉冬粉湯",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "flex": 0
+#                   },
+#                   {
+#                     "type": "text",
+#                     "text": "$70(大)/$50(小)",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "align": "end"
+#                   }
+#                 ]
+#               },
+#               {
+#                 "type": "box",
+#                 "layout": "horizontal",
+#                 "contents": [
+#                   {
+#                     "type": "text",
+#                     "text": "鴨肉湯麵*",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "flex": 0
+#                   },
+#                   {
+#                     "type": "text",
+#                     "text": "$65(大)/$50(小)",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "align": "end"
+#                   }
+#                 ]
+#               },
+#               {
+#                 "type": "box",
+#                 "layout": "horizontal",
+#                 "contents": [
+#                   {
+#                     "type": "text",
+#                     "text": "肉羹麵*",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "flex": 0
+#                   },
+#                   {
+#                     "type": "text",
+#                     "text": "$65(大)/$50(小)",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "align": "end"
+#                   }
+#                 ]
+#               },
+#               {
+#                 "type": "box",
+#                 "layout": "horizontal",
+#                 "contents": [
+#                   {
+#                     "type": "text",
+#                     "text": "肉臊麵*、湯麵*",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "flex": 0
+#                   },
+#                   {
+#                     "type": "text",
+#                     "text": "$50(大)/$40(小)",
+#                     "size": "sm",
+#                     "color": "#111111",
+#                     "align": "end"
+#                   }
+#                 ]
+#               }
+#             ],
+#             "margin": "md",
+#             "spacing": "sm"
+#           }
