@@ -94,9 +94,7 @@ def handle_text(event):
                         QuickReplyButton(
                             action=MessageAction(label='看主食', text='主食')),
                         QuickReplyButton(
-                            action=MessageAction(label='看切料', text='切料')),
-                        QuickReplyButton(
-                            action=MessageAction(label='看燙青菜', text='燙青菜'))
+                            action=MessageAction(label='看切料跟燙青菜', text='切料及燙青菜'))
                     ]
                 )
             )
@@ -124,36 +122,14 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '切料':
+    elif mtext == '切料及燙青菜':
         try:
             message = [
                 FlexSendMessage(
                     alt_text='切料菜單',
                     contents=sides()
                 ),
-                TextSendMessage(
-                    quick_reply=QuickReply(
-                        items=[
-                            QuickReplyButton(
-                                action=MessageAction(label='看更多菜單', text='菜單')
-                            ),
-                            QuickReplyButton(
-                                action=MessageAction(label='我要點餐', text='我要點餐')
-                            )
-                        ]
-                    )
-                )
             ]
-            line_bot_api.reply_message(event.reply_token, message)
-        except:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-
-    elif mtext == '燙青菜':
-        try:
-            message = FlexSendMessage(
-                alt_text='有這些燙青菜',
-                contents=veggie()
-            )
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
