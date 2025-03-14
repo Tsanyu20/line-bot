@@ -32,6 +32,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text(event):
     mtext = event.message.text
+
     if mtext == '功能關鍵字清單':
         try:
             message = TextSendMessage(
@@ -81,15 +82,68 @@ def handle_text(event):
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
     elif mtext == '菜單':
         try:
-            message = FlexSendMessage(
-                alt_text='看菜單',
-                contents=test()
+            message = TextSendMessage(
+                text='請選擇想看的菜單：',
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(
+                            action=MessageAction(label='看湯類', text='湯類')),
+                        QuickReplyButton(
+                            action=MessageAction(label='看主食', text='主食')),
+                        QuickReplyButton(
+                            action=MessageAction(label='看切料', text='切料')),
+                        QuickReplyButton(
+                            action=MessageAction(label='看燙青菜', text='燙青菜'))
+                    ]
+                )
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+    elif mtext == '湯類':
+        try:
+            message = FlexSendMessage(
+                alt_text='湯類菜單',
+                contents=soup()
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
+    elif mtext == '主食':
+        try:
+            message = FlexSendMessage(
+                alt_text='主食菜單',
+                contents=main_food()
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
+    elif mtext == '切料':
+        try:
+            message = FlexSendMessage(
+                alt_text='切料菜單',
+                contents=sides()
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+    elif mtext == '燙青菜':
+        try:
+            message = FlexSendMessage(
+                alt_text='有這些燙青菜',
+                contents=veggie()
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        except:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
     elif mtext == '推薦':
         try:
             message = [
