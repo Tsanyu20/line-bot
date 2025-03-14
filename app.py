@@ -122,11 +122,11 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '切料及燙青菜':
+    elif ['切料','青菜'] in mtext:
         try:
             message = [
                 FlexSendMessage(
-                    alt_text='切料菜單',
+                    alt_text='切料及燙青菜菜單',
                     contents=sides()
                 ),
             ]

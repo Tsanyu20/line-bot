@@ -353,7 +353,7 @@ def main_food():
               {
                 "type": "text",
                 "text": "麵食也可加滷蛋或油豆腐唷！",
-                "size": "XS",
+                "size": "xs",
                 "color": "#555555",
                 "align": "end"
               }
