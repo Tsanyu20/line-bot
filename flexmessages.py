@@ -220,7 +220,7 @@ def main_food():
         "type": "text",
         "text": "主食及配菜",
         "weight": "bold",
-        "color": "#694f08",
+        "color": "#005ff7",
         "size": "xl",
         "margin": "sm"
       },
@@ -229,7 +229,8 @@ def main_food():
         "text": "飯食",
         "offsetTop": "lg",
         "size": "md",
-        "weight": "bold"
+        "weight": "bold",
+        "color": "#6fa642"
       },
       {
         "type": "box",
@@ -377,7 +378,7 @@ def main_food():
             "size": "md",
             "weight": "bold",
             "flex": 0,
-            "color": "#5e8a35"
+            "color": "#00a4d2"
           },
           {
             "type": "text",
@@ -571,7 +572,7 @@ def main_food():
           "label": "我要點餐",
           "text": "我要點餐"
         },
-        "color": "#694f08",
+        "color": "#005ff7",
         "style": "primary"
       },
       {
@@ -583,7 +584,7 @@ def main_food():
         },
         "style": "primary",
         "margin": "sm",
-        "color": "#05e205"
+        "color": "#6fa642"
       }
     ]
   }
