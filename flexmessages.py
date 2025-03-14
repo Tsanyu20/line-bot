@@ -360,6 +360,33 @@ def main_food():
             ]
           }
         ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "我要點餐",
+              "text": "我要點餐"
+            },
+            "color": "#0aa1cb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "看其他菜單",
+              "text": "菜單"
+            },
+            "style": "primary",
+            "margin": "sm",
+            "color": "#b747dd"
+          }
+        ]
       }
     },
     {
@@ -558,6 +585,33 @@ def main_food():
             ],
             "margin": "md",
             "spacing": "sm"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "我要點餐",
+              "text": "我要點餐"
+            },
+            "color": "#0aa1cb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "看其他菜單",
+              "text": "菜單"
+            },
+            "style": "primary",
+            "margin": "sm",
+            "color": "#b747dd"
           }
         ]
       }
