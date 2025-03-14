@@ -211,140 +211,49 @@ def soup():
 
 def main_food():
   return {
-      "type": "bubble",
-      "body": {
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "主食及配菜",
+        "weight": "bold",
+        "color": "#694f08",
+        "size": "xl",
+        "margin": "sm"
+      },
+      {
+        "type": "text",
+        "text": "飯食",
+        "offsetTop": "lg",
+        "size": "md",
+        "weight": "bold"
+      },
+      {
         "type": "box",
         "layout": "vertical",
+        "margin": "xl",
+        "spacing": "sm",
         "contents": [
           {
-            "type": "text",
-            "text": "主食及配菜",
-            "weight": "bold",
-            "color": "#694f08",
-            "size": "xl",
-            "margin": "sm"
-          },
-          {
-            "type": "text",
-            "text": "飯食",
-            "offsetTop": "lg",
-            "size": "md",
-            "weight": "bold"
-          },
-          {
             "type": "box",
-            "layout": "vertical",
-            "margin": "xl",
-            "spacing": "sm",
+            "layout": "horizontal",
             "contents": [
               {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "雞肉飯、肉臊飯",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$40(大)/$30(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "肉羹飯",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$60(大)/$50(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鍋燒粥",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$90(大)/$75(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "滷蛋",
-                    "size": "sm",
-                    "color": "#111111"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$15",
-                    "size": "sm",
-                    "align": "end",
-                    "color": "#111111"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "油豆腐",
-                    "size": "sm",
-                    "color": "#111111"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$10",
-                    "size": "sm",
-                    "align": "end",
-                    "color": "#111111"
-                  }
-                ]
+                "type": "text",
+                "text": "雞肉飯、肉臊飯",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
               },
               {
                 "type": "text",
-                "text": "麵食也可加滷蛋或油豆腐唷！",
-                "size": "xxs",
-                "color": "#555555",
+                "text": "$40(大)/$30(小)",
+                "size": "sm",
+                "color": "#111111",
                 "align": "end"
-              },
-              {
-                "type": "separator",
-                "margin": "md"
               }
             ]
           },
@@ -354,221 +263,331 @@ def main_food():
             "contents": [
               {
                 "type": "text",
-                "text": "麵食",
-                "size": "md",
-                "weight": "bold",
-                "flex": 0,
-                "color": "#5e8a35"
+                "text": "肉羹飯",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
               },
               {
                 "type": "text",
-                "size": "xxs",
-                "text": "*可選意麵、雞絲麵、蒸煮麵",
-                "align": "end",
-                "offsetTop": "sm",
-                "wrap": true
+                "text": "$60(大)/$50(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
               }
-            ],
-            "margin": "sm"
+            ]
           },
           {
             "type": "box",
-            "layout": "vertical",
+            "layout": "horizontal",
             "contents": [
               {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "乾麵／米粉、湯麵／米粉",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$55(大)/$40(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
+                "type": "text",
+                "text": "鍋燒粥",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
               },
               {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "乾麵*（非油麵）",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$60(大)/$45(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鴨肉湯冬粉／蒸煮",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$80(大)/$65(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鴨肉湯麵／米粉",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$70(大)/$60(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "肉羹麵／米粉",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$70(大)/$60(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "肉羹冬粉*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$80(大)/$65(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鍋燒冬粉*",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$90(大)/$75(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "鍋燒麵",
-                    "size": "sm",
-                    "color": "#111111",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "$75(大)/$65(小)",
-                    "size": "sm",
-                    "color": "#111111",
-                    "align": "end"
-                  }
-                ]
+                "type": "text",
+                "text": "$90(大)/$75(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
               }
-            ],
-            "margin": "md",
-            "spacing": "sm"
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "便當",
+                "size": "sm",
+                "color": "#111111"
+              },
+              {
+                "type": "text",
+                "text": "$70(加飯)/$60",
+                "size": "sm",
+                "align": "end",
+                "color": "#111111"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "滷蛋",
+                "size": "sm",
+                "color": "#111111"
+              },
+              {
+                "type": "text",
+                "text": "$15",
+                "size": "sm",
+                "align": "end",
+                "color": "#111111"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "油豆腐",
+                "size": "sm",
+                "color": "#111111"
+              },
+              {
+                "type": "text",
+                "text": "$10",
+                "size": "sm",
+                "align": "end",
+                "color": "#111111"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "麵食也可加滷蛋或油豆腐唷！",
+            "size": "xxs",
+            "color": "#555555",
+            "align": "end"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
           }
         ]
       },
-      "footer": {
+      {
         "type": "box",
         "layout": "horizontal",
         "contents": [
           {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "我要點餐",
-              "text": "我要點餐"
-            },
-            "color": "#694f08",
-            "style": "primary"
+            "type": "text",
+            "text": "麵食",
+            "size": "md",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#5e8a35"
           },
           {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "看其他菜單",
-              "text": "菜單"
-            },
-            "style": "primary",
-            "margin": "sm",
-            "color": "#05e205"
+            "type": "text",
+            "size": "xxs",
+            "text": "*可選意麵、雞絲麵、蒸煮麵",
+            "align": "end",
+            "offsetTop": "sm",
+            "wrap": True
           }
-        ]
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "乾麵／米粉、湯麵／米粉",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$55(大)/$40(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "乾麵*（非油麵）",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$60(大)/$45(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "鴨肉湯冬粉／蒸煮",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$80(大)/$65(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "鴨肉湯麵／米粉",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$70(大)/$60(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "肉羹麵／米粉",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$70(大)/$60(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "肉羹冬粉*",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$80(大)/$65(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "鍋燒冬粉*",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$90(大)/$75(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "鍋燒麵",
+                "size": "sm",
+                "color": "#111111",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$75(大)/$65(小)",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          }
+        ],
+        "margin": "md",
+        "spacing": "sm"
       }
-    }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "我要點餐",
+          "text": "我要點餐"
+        },
+        "color": "#694f08",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "看其他菜單",
+          "text": "菜單"
+        },
+        "style": "primary",
+        "margin": "sm",
+        "color": "#05e205"
+      }
+    ]
+  }
+}
 
 def sides():
   return {
