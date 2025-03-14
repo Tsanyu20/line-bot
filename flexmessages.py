@@ -211,9 +211,6 @@ def soup():
 
 def main_food():
   return {
-  "type": "carousel",
-  "contents": [
-    {
       "type": "bubble",
       "body": {
         "type": "box",
@@ -221,16 +218,23 @@ def main_food():
         "contents": [
           {
             "type": "text",
-            "text": "飯食及配菜",
+            "text": "主食及配菜",
             "weight": "bold",
-            "color": "#0aa1cb",
+            "color": "#694f08",
             "size": "xl",
             "margin": "sm"
           },
           {
+            "type": "text",
+            "text": "飯食",
+            "offsetTop": "lg",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
             "type": "box",
             "layout": "vertical",
-            "margin": "md",
+            "margin": "xl",
             "spacing": "sm",
             "contents": [
               {
@@ -299,25 +303,6 @@ def main_food():
                 "contents": [
                   {
                     "type": "text",
-                    "text": "便當",
-                    "size": "sm",
-                    "color": "#111111"
-                  },
-                  {
-                    "type": "text",
-                    "text": "$70(加飯)/$60",
-                    "size": "sm",
-                    "align": "end",
-                    "color": "#111111"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
                     "text": "滷蛋",
                     "size": "sm",
                     "color": "#111111"
@@ -353,48 +338,16 @@ def main_food():
               {
                 "type": "text",
                 "text": "麵食也可加滷蛋或油豆腐唷！",
-                "size": "xs",
+                "size": "xxs",
                 "color": "#555555",
                 "align": "end"
+              },
+              {
+                "type": "separator",
+                "margin": "md"
               }
             ]
-          }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "我要點餐",
-              "text": "我要點餐"
-            },
-            "color": "#0aa1cb",
-            "style": "primary"
           },
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "看其他菜單",
-              "text": "菜單"
-            },
-            "style": "primary",
-            "margin": "sm",
-            "color": "#b747dd"
-          }
-        ]
-      }
-    },
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
           {
             "type": "box",
             "layout": "horizontal",
@@ -402,10 +355,10 @@ def main_food():
               {
                 "type": "text",
                 "text": "麵食",
-                "size": "xl",
+                "size": "md",
                 "weight": "bold",
                 "flex": 0,
-                "color": "#0aa1cb"
+                "color": "#5e8a35"
               },
               {
                 "type": "text",
@@ -413,7 +366,7 @@ def main_food():
                 "text": "*可選意麵、雞絲麵、蒸煮麵",
                 "align": "end",
                 "offsetTop": "sm",
-                "wrap": True
+                "wrap": true
               }
             ],
             "margin": "sm"
@@ -599,7 +552,7 @@ def main_food():
               "label": "我要點餐",
               "text": "我要點餐"
             },
-            "color": "#0aa1cb",
+            "color": "#694f08",
             "style": "primary"
           },
           {
@@ -611,13 +564,11 @@ def main_food():
             },
             "style": "primary",
             "margin": "sm",
-            "color": "#b747dd"
+            "color": "#05e205"
           }
         ]
       }
     }
-  ]
-}
 
 def sides():
   return {
@@ -861,121 +812,6 @@ def sides():
         "style": "primary",
         "margin": "sm",
         "color": "#0aa1cb"
-      }
-    ]
-  }
-}
-
-def veggie():
-  return {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "燙青菜",
-        "weight": "bold",
-        "color": "#3e5925",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "大陸妹",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$50(大)/$30(小)",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "空心菜",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$50(大)/$30(小)",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "地瓜葉",
-                "size": "sm",
-                "color": "#111111",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "$50(大)/$30(小)",
-                "size": "sm",
-                "color": "#111111",
-                "align": "end"
-              }
-            ]
-          }
-        ],
-        "margin": "xxl",
-        "spacing": "sm"
-      }
-    ],
-    "spacing": "sm",
-    "margin": "xxl"
-  },
-  "footer": {
-    "type": "box",
-    "layout": "horizontal",
-    "contents": [
-      {
-        "type": "button",
-        "action": {
-          "type": "message",
-          "label": "我要點餐",
-          "text": "我要點餐"
-        },
-        "color": "#3e5925",
-        "style": "primary"
-      },
-      {
-        "type": "button",
-        "action": {
-          "type": "message",
-          "label": "看其他菜單",
-          "text": "菜單"
-        },
-        "style": "primary",
-        "margin": "sm",
-        "color": "#008cb4"
       }
     ]
   }
