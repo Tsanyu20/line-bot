@@ -126,10 +126,23 @@ def handle_text(event):
 
     elif mtext == '切料':
         try:
-            message = FlexSendMessage(
-                alt_text='切料菜單',
-                contents=sides()
-            )
+            message = [
+                FlexSendMessage(
+                    alt_text='切料菜單',
+                    contents=sides()
+                ),
+                TextSendMessage(
+                    quick_reply=QuickReply(
+                        items=[
+                            QuickReplyButton(
+                                action=MessageAction(label='看更多菜單', text='菜單')
+                            ),
+                            QuickReplyButton(
+                                action=MessageAction(label='我要點餐', text='我要點餐')
+                            )
+                        ]
+                    )
+                )
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
