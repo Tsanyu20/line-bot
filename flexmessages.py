@@ -416,13 +416,13 @@ def soup():
             "color": "#0aa1cb",
             "style": "primary",
             "margin": "xxl"
-          }
-        ]
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-    return contents
+    ]
+  }
+  return contents
 
 def main_food():
   contents= {
@@ -673,9 +673,10 @@ def main_food():
         "margin": "sm"
       }
     ]
+    }
   }
-}
   return contents
+
 def sides():
   pass
 
