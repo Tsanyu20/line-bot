@@ -228,10 +228,6 @@ def main_food():
             "margin": "sm"
           },
           {
-            "type": "separator",
-            "margin": "lg"
-          },
-          {
             "type": "box",
             "layout": "vertical",
             "margin": "md",
@@ -562,10 +558,6 @@ def main_food():
             ],
             "margin": "md",
             "spacing": "sm"
-          },
-          {
-            "type": "separator",
-            "margin": "lg"
           }
         ]
       }
