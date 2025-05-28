@@ -31,7 +31,7 @@ def soup():
               },
               {
                 "type": "text",
-                "text": "$50",
+                "text": "$55",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -337,27 +337,8 @@ def main_food():
             ]
           },
           {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "油豆腐",
-                "size": "sm",
-                "color": "#111111"
-              },
-              {
-                "type": "text",
-                "text": "$10",
-                "size": "sm",
-                "align": "end",
-                "color": "#111111"
-              }
-            ]
-          },
-          {
             "type": "text",
-            "text": "麵食也可加滷蛋或油豆腐唷！",
+            "text": "麵食也可加滷蛋唷！",
             "size": "xxs",
             "color": "#555555",
             "align": "end"
@@ -541,7 +522,7 @@ def main_food():
             "contents": [
               {
                 "type": "text",
-                "text": "鍋燒麵",
+                "text": "鍋燒麵／米粉",
                 "size": "sm",
                 "color": "#111111",
                 "flex": 0

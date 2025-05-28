@@ -43,12 +43,12 @@ def handle_text(event):
                             action=MessageAction(label='預約訂單', text='我要點餐')),
                         QuickReplyButton(
                             action=MessageAction(label='我要看菜單', text='菜單')),
+                        # QuickReplyButton(
+                        #     action=MessageAction(label='我需要推薦', text='推薦')),
                         QuickReplyButton(
-                            action=MessageAction(label='我需要推薦', text='推薦')),
-                        QuickReplyButton(
-                            action=MessageAction(label='查詢店家地址', text='店家地址')),
-                        QuickReplyButton(
-                            action=MessageAction(label='我要結帳', text='結帳'))
+                            action=MessageAction(label='查詢店家地址', text='店家地址'))#,
+                        # QuickReplyButton(
+                        #     action=MessageAction(label='我要結帳', text='結帳'))
                     ]
                 )
             )
@@ -58,27 +58,37 @@ def handle_text(event):
 
     elif mtext == '我要點餐':
         try:
-            message = TextSendMessage(
-                text='請選擇要自取還是外送：',
-                quick_reply=QuickReply(
-                    items=[
-                        QuickReplyButton(
-                            action=MessageAction(label='預約自取', text='線上訂餐稍後取')),
-                        QuickReplyButton(
-                            action=MessageAction(label='預約外送', text='外送到我家'))
-                    ]
+            message = [
+                TextSendMessage(text='以下連結是我們的點餐表單！'),
+                TextSendMessage(text='https://tycreate.aidaform.com/free-product-order-form'),
+                TextSendMessage(
+                    text='或是以文字訊息傳菜單給我們喔！',
+                    quick_reply=QuickReply(
+                        items=[
+                            QuickReplyButton(
+                                action=MessageAction(label='我要外送', text='線上訂餐稍後取')),
+                            QuickReplyButton(
+                                action=MessageAction(label='我要自取', text='外送到我家')
+                            )
+
+                        ]
+                    )
                 )
-            )
+            ]
+
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
     elif mtext == '線上訂餐稍後取' or mtext == '外送到我家':
         try:
-            message = StickerSendMessage(
-                package_id='1',
-                sticker_id='2'
-            )
+            message = [
+                TextSendMessage(text='告訴我們想吃的品項，也要記得留下稱呼及電話讓我們可以辨識哦！需外送的話也請附上住址～'),
+                StickerSendMessage(
+                    package_id='1',
+                    sticker_id='2'),
+                TextSendMessage(text='等待訊息被已讀，或收到回覆才代表我們有確認訂單哦！')
+            ]
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
