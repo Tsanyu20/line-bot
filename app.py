@@ -32,7 +32,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text(event):
     mtext = event.message.text
-
+    reservation = ['外送', '自取', '點餐', '訂餐','訂飯']
+    reserve = [True if x in mtext else False for x in reservation]
     if mtext == '功能關鍵字清單':
         try:
             message = TextSendMessage(
@@ -80,10 +81,11 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '線上訂餐稍後取' or mtext == '外送到我家':
+    elif mtext == '線上訂餐稍後取' or mtext == '外送到我家' or True in reserve:
         try:
+            reserve = []
             message = [
-                TextSendMessage(text='告訴我們想吃的品項，也要記得留下稱呼及電話讓我們可以辨識哦！需外送的話也請附上住址～'),
+                # TextSendMessage(text='告訴我們想吃的品項，也要記得留下稱呼及電話讓我們可以辨識哦！需外送的話也請附上住址～'),
                 StickerSendMessage(
                     package_id='1',
                     sticker_id='2'),
@@ -93,7 +95,7 @@ def handle_text(event):
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '菜單':
+    elif '菜單' in mtext:
         try:
             message = TextSendMessage(
                 text='請選擇想看的菜單：',
@@ -171,25 +173,28 @@ def handle_text(event):
 
     elif '店家地址' in mtext:
         try:
-            message = LocationSendMessage(
-                title='勝美美食',
-                address='屏東縣東港鎮朝陽街44號',
-                latitude=22.466120,
-                longitude=120.449240
-            )
+            message = [
+                LocationSendMessage(
+                    title='勝美美食',
+                    address='屏東縣東港鎮朝陽街44號',
+                    latitude=22.466120,
+                    longitude=120.449240
+                ),
+                TextSendMessage(text='也可以點開我們的帳號主頁面尋找哦！')
+            ]
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-    elif mtext == '結帳':
-        try:
-            message = FlexSendMessage(
-                alt_text='收據',
-                contents=total()
-            )
-            line_bot_api.reply_message(event.reply_token, message)
-        except:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    # elif mtext == '結帳':
+    #     try:
+    #         message = FlexSendMessage(
+    #             alt_text='收據',
+    #             contents=total()
+    #         )
+    #         line_bot_api.reply_message(event.reply_token, message)
+    #     except:
+    #         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif mtext == '怎麼使用':
         line_bot_api.reply_message(
             event.reply_token,

@@ -9,7 +9,7 @@ def soup():
         "type": "text",
         "text": "湯類及蒸蛋",
         "weight": "bold",
-        "color": "#76b33d",
+        "color": "#ff9300",
         "size": "xl"
       },
       {
@@ -203,7 +203,7 @@ def soup():
         },
         "style": "primary",
         "margin": "sm",
-        "color": "#ddd605"
+        "color": "#ff9300"
       }
     ]
   }
@@ -230,7 +230,7 @@ def main_food():
         "offsetTop": "lg",
         "size": "md",
         "weight": "bold",
-        "color": "#6fa642"
+        "decoration": "underline"
       },
       {
         "type": "box",
@@ -359,7 +359,7 @@ def main_food():
             "size": "md",
             "weight": "bold",
             "flex": 0,
-            "color": "#00a4d2"
+            "decoration": "underline"
           },
           {
             "type": "text",
@@ -529,7 +529,7 @@ def main_food():
               },
               {
                 "type": "text",
-                "text": "$75(大)/$65(小)",
+                "text": "$80(大)/$70(小)",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -565,7 +565,7 @@ def main_food():
         },
         "style": "primary",
         "margin": "sm",
-        "color": "#6fa642"
+        "color": "#ffce3c"
       }
     ]
   }
@@ -582,14 +582,21 @@ def sides():
         "type": "text",
         "text": "切料及燙青菜",
         "weight": "bold",
-        "color": "#4f7a28",
-        "size": "xl"
+        "color": "#119a11",
+        "size": "xl",
+        "margin": "sm"
+      },
+      {
+        "type": "text",
+        "text": "切料",
+        "offsetTop": "lg",
+        "size": "md",
+        "weight": "bold",
+        "decoration": "underline"
       },
       {
         "type": "box",
         "layout": "vertical",
-        "margin": "xxl",
-        "spacing": "sm",
         "contents": [
           {
             "type": "box",
@@ -710,11 +717,21 @@ def sides():
                 "align": "end"
               }
             ]
+          },
+          {
+            "type": "separator",
+            "margin": "lg"
           }
-        ]
+        ],
+        "spacing": "sm",
+        "margin": "xl"
       },
       {
-        "type": "separator",
+        "type": "text",
+        "text": "燙青菜",
+        "size": "md",
+        "decoration": "underline",
+        "weight": "bold",
         "margin": "lg"
       },
       {
@@ -781,13 +798,9 @@ def sides():
               }
             ]
           }
-        ],
-        "margin": "xl",
-        "spacing": "sm"
+        ]
       }
-    ],
-    "spacing": "sm",
-    "margin": "xxl"
+    ]
   },
   "footer": {
     "type": "box",
@@ -800,7 +813,7 @@ def sides():
           "label": "我要點餐",
           "text": "我要點餐"
         },
-        "color": "#4f7a28",
+        "color": "#ffaa00",
         "style": "primary"
       },
       {
@@ -812,7 +825,7 @@ def sides():
         },
         "style": "primary",
         "margin": "sm",
-        "color": "#0aa1cb"
+        "color": "#0fac0f"
       }
     ]
   }
